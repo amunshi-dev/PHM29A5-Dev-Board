@@ -1,23 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Dev Board</title>
-  
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+ <title>Dev Board</title>
+ 
  <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.9/daisyui.css" rel="stylesheet" type="text/css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="./styles/style.css">
+ <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+ 
+ <!-- Custom Styles -->
+ <link rel="stylesheet" href="./styles/style.css">
 </head>
 
 <body>
+ <main>
+  <section class="topbar">
+   <!--  logo   -->
+   <div>
+    <img src="./assets/logo.png" alt="dev board logo">
+    <p class="">Dev<span class="">Board</span></p>
+   </div>
+   
+   <!--task total && random theme -->
+   <div>
+    <div>
+     <input type="checkbox" checked="checked" class="checkbox" />
+     <span id="">23</span>
+    </div>
+    <img src="./assets/theme-btn.png" id="theme-btn">
+   </div>
+   
+  </section>
+ </main>
  
  
- 
-  <script src="./scripts/main.js"></script>
+ <script src="./scripts/main.js"></script>
 </body>
+
 </html>
