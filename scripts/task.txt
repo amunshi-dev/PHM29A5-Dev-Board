@@ -1,0 +1,23 @@
+When complete button clicked 
+1. Show an alert "Board has updated successfully " 
+2. When okay on alert is clicked 
+3. Targeted task card disabled
+4. Task assigned - 1
+5. Completed task + 1
+6. Log activity with targeted task title in it with real time update
+7. When all task are done
+
+
+When clear history is clicked 
+1. Empty activity log
+
+When Discover is clicked 
+1. Take to Q&A page
+
+.When Back to Board clicked 
+1. Take to Board page
+
+When Theme btn is clicked 
+1. Change body color randomly 
+
+Make the date 📅 up to date 
