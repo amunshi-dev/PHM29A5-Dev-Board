@@ -39,7 +39,7 @@
    <div class="flex items-center gap-6">
     <div class="flex items-baseline gap-3 bg-background py-3 px-6 rounded-full">
      <input type="checkbox" checked="checked" class="checkbox checkbox-lg checked:bg-accent checked:text-white checked:border-accent" />
-     <span id="" class="font-bold text-3xl">23</span>
+     <span id="completed-task" class="font-bold text-3xl">23</span>
     </div>
     <img src="./assets/theme-btn.png" id="theme-btn" class="p-3 bg-background rounded-full" />
    </div>
@@ -60,11 +60,11 @@
        <p class="font-medium text-text text-opacity-80">
         Task Assinged
        </p>
-       <span id="" class="font-bold text-3xl">06</span>
+       <span id="remaining-task" class="font-bold text-3xl">06</span>
       </div>
      </div>
      <!-- discover -->
-     <div class="flex gap-6 items-center bg-gradient-to-r from-[#3752FD] via-[#6C7FFA] to-[#9BA8F8] p-6 rounded-2xl col-span-2">
+     <div id="discoverBtn" class="flex gap-6 items-center bg-gradient-to-r from-[#3752FD] via-[#6C7FFA] to-[#9BA8F8] p-6 rounded-2xl col-span-2">
       <img src="./assets/board.png" alt="calender " />
       <p class="font-medium text-2xl text-white">
        Discover Something <br />
@@ -202,7 +202,7 @@
         <p class="text-sm text-text/70">Deadline</p>
         <p class="font-medium text-text">21 March 2025</p>
        </div>
-       <button class="button text-white bg-accent px-5 py-3 font-medium rounded-lg">
+       <button class="completeBtn text-white bg-accent px-5 py-3 font-medium rounded-lg">
         Completed
        </button>
       </div>
@@ -219,11 +219,11 @@
       </div>
       <span class="font-medium text-xl text-text">Activity Log</span>
      </div>
-     <button class="button text-white bg-accent px-5 py-3 font-medium rounded-lg">
+     <button id="clearBtn" class="button text-white bg-accent px-5 py-3 font-medium rounded-lg">
       Clear History
      </button>
     </div>
-    <div class="log space-y-6">
+    <div id="logContainer" class=" space-y-6">
      <p class="text-text/70 p-4 bg-background rounded-lg">
       You have Complete The Task Add Dark Mode at 12:48:15 PM
      </p>
