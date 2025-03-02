@@ -47,6 +47,9 @@ function updateTaskCounts() {
   const taskComplete = document.getElementById("completed-task");
 
   remainingTask--;
+  if (remainingTask == 0) {
+    alert("Congratulations! All task has been completed.");
+  }
   taskRemain.textContent = remainingTask;
 
   completedTask++;
@@ -94,3 +97,17 @@ function clearLogs() {
   logContainer.innerHTML = "";
 }
 clearButton.addEventListener("click", clearLogs);
+
+// themeGenareator
+
+const themeBtn = document.getElementById("theme-btn");
+
+themeBtn.addEventListener("click", function () {
+  let r = Math.floor(Math.random() * 256);
+  let g = Math.floor(Math.random() * 256);
+  let b = Math.floor(Math.random() * 256);
+
+  let randomColor = `rgba(${r},${g},${b},0.2)`;
+
+  document.body.style.backgroundColor = randomColor;
+});
