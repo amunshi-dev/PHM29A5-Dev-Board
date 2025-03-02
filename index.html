@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DevBoard</title>
 
-    <!-- daisyUI & tailwindcss -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.9/daisyui.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-    <!-- custom style -->
-    <style type="text/tailwindcss">
-      @theme {
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>DevBoard</title>
+ 
+ <!-- daisyUI & tailwindcss -->
+ <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.9/daisyui.css" rel="stylesheet" type="text/css" />
+ <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+ 
+ <!-- custom style -->
+ <style type="text/tailwindcss">
+  @theme {
         --color-clifford: #da373d;
         --color-accent: #f4f7ff;
         --color-text: #00303c;
@@ -24,280 +21,221 @@
         --color-background: #f4f7ff;
       }
     </style>
-    <link rel="stylesheet" href="./styles/style.css" />
-  </head>
+ <link rel="stylesheet" href="./styles/style.css" />
+</head>
 
-  <body class="ff-poppins bg-background min-h-screen space-y-6">
-    <header class="container mx-auto">
-      <nav class="flex items-center justify-between p-6 rounded-2xl bg-white">
-        <!--  logo   -->
-        <div class="flex items-end gap-2">
-          <img src="./assets/logo.png" alt="dev board logo" />
-          <p class="text-4xl font-light">
-            Dev<span class="font-bold">Board</span>
-          </p>
-        </div>
+<body class="ff-poppins bg-background min-h-screen space-y-6">
+ <header class="container mx-auto">
+  <nav class="flex items-center justify-between p-6 rounded-2xl bg-white">
+   <!--  logo   -->
+   <div class="flex items-end gap-2">
+    <img src="./assets/logo.png" alt="dev board logo" />
+    <p class="text-4xl font-light">
+     Dev<span class="font-bold">Board</span>
+    </p>
+   </div>
+   
+   <!--task total && random theme -->
+   <div class="flex items-center gap-6">
+    <div class="flex items-baseline gap-3 bg-background py-3 px-6 rounded-full">
+     <input type="checkbox" checked="checked" class="checkbox checkbox-lg checked:bg-accent checked:text-white checked:border-accent" />
+     <span id="" class="font-bold text-3xl">23</span>
+    </div>
+    <img src="./assets/theme-btn.png" id="theme-btn" class="p-3 bg-background rounded-full" />
+   </div>
+  </nav>
+ </header>
+ 
+ <main class="container mx-auto">
+  <section class="grid grid-cols-4 gap-4">
+   <!-- top bar/ progress bar -->
+   <div class="col-span-3 bg-white rounded-2xl p-4 space-y-8 divide-y-2 divide-[#3752FD]/20 divide-dashed divide-background">
+    <div class="grid grid-cols-4 gap-4 pb-6">
+     <!--task assigned  -->
+     <div class="bg-background flex gap-4 p-8 col-span-1 rounded-xl">
+      <div class="p-4 rounded-full bg-white">
+       <input type="checkbox" checked="checked" class="checkbox checkbox-lg checked:bg-accent checked:text-white checked:border-accent" />
+      </div>
+      <div class="flex flex-col">
+       <p class="font-medium text-text text-opacity-80">
+        Task Assinged
+       </p>
+       <span id="" class="font-bold text-3xl">06</span>
+      </div>
+     </div>
+     <!-- discover -->
+     <div class="flex gap-6 items-center bg-gradient-to-r from-[#3752FD] via-[#6C7FFA] to-[#9BA8F8] p-6 rounded-2xl col-span-2">
+      <img src="./assets/board.png" alt="calender " />
+      <p class="font-medium text-2xl text-white">
+       Discover Something <br />
+       New Today!
+      </p>
+     </div>
+     <!-- date -->
+     <div class="bg-background flex gap-4 p-8 col-span-1 rounded-xl">
+      <div class="p-4 rounded-full bg-white">
+       <img src="./assets/calender.png" alt="" />
+      </div>
+      <div class="flex flex-col">
+       <p class="font-medium text-text/80">
+        <span id="day" class="block"></span>
+        <span id="date" class="font-bold text-xl"></span>
+       </p>
+      </div>
+     </div>
+    </div>
+    
+    <!-- task container -->
+    <div class="grid grid-cols-3 gap-8">
+     <!-- task card -->
+     <div class="task-card p-6 rounded-2xl bg-background flex flex-col gap-4">
+      <a class="px-2 py-4 bg-white rounded-lg self-start">ShopEase</a>
+      <h2 class="font-medium text-2xl">Fix Mobile Button Issue</h2>
+      <div>
+       <p class="p-4 pb-6 text-[#000]/50 bg-white rounded-lg">
+        Debug using Chrome DevTools, check for overlapping elements...
+       </p>
+      </div>
+      
+      <div class="flex justify-between items-center border-t border-dashed border-text/10 pt-2">
+       <div class="flex flex-col">
+        <p class="text-sm text-text/70">Deadline</p>
+        <p class="font-medium text-text">21 March 2025</p>
+       </div>
+       <button class="completeBtn text-white bg-accent px-5 py-3 font-medium rounded-lg">
+        Completed
+       </button>
+      </div>
+     </div>
+     <!-- task card -->
+     <div class="task-card p-6 rounded-2xl bg-background flex flex-col gap-4">
+      <a class="px-2 py-4 bg-white rounded-lg self-start">CloudSync</a>
+      <h2 class="font-medium text-2xl">Add Dark Mode</h2>
+      <div>
+       <p class="p-4 text-[#000]/50 bg-white rounded-lg">
+        Debug using Chrome DevTools, check for overlapping elements...
+       </p>
+      </div>
+      
+      <div class="flex justify-between items-center border-t border-dashed border-text/10 pt-2">
+       <div class="flex flex-col">
+        <p class="text-sm text-text/70">Deadline</p>
+        <p class="font-medium text-text">21 March 2025</p>
+       </div>
+       <button class="completeBtn text-white bg-accent px-5 py-3 font-medium rounded-lg">
+        Completed
+       </button>
+      </div>
+     </div>
+     <!-- task card -->
+     <div class="task-card p-6 rounded-2xl bg-background flex flex-col gap-4">
+      <a class="px-2 py-4 bg-white rounded-lg self-start">SwiftPay</a>
+      <h2 class="font-medium text-2xl">Optimize Home Page</h2>
+      <div>
+       <p class="p-4 text-[#000]/50 bg-white rounded-lg">
+        Debug using Chrome DevTools, check for overlapping elements...
+       </p>
+      </div>
+      
+      <div class="flex justify-between items-center border-t border-dashed border-text/10 pt-2">
+       <div class="flex flex-col">
+        <p class="text-sm text-text/70">Deadline</p>
+        <p class="font-medium text-text">21 March 2025</p>
+       </div>
+       <button class="completeBtn text-white bg-accent px-5 py-3 font-medium rounded-lg">
+        Completed
+       </button>
+      </div>
+     </div>
+     <!-- task card -->
+     <div class="task-card p-6 rounded-2xl bg-background flex flex-col gap-4">
+      <a class="px-2 py-4 bg-white rounded-lg self-start">Meta</a>
+      <h2 class="font-medium text-2xl">Add new emoji🤲</h2>
+      <div>
+       <p class="p-4 text-[#000]/50 bg-white rounded-lg">
+        Debug using Chrome DevTools, check for overlapping elements...
+       </p>
+      </div>
+      
+      <div class="flex justify-between items-center border-t border-dashed border-text/10 pt-2">
+       <div class="flex flex-col">
+        <p class="text-sm text-text/70">Deadline</p>
+        <p class="font-medium text-text">21 March 2025</p>
+       </div>
+       <button class="completeBtn text-white bg-accent px-5 py-3 font-medium rounded-lg">
+        Completed
+       </button>
+      </div>
+     </div>
+     <!-- task card -->
+     <div class="task-card p-6 rounded-2xl bg-background flex flex-col gap-4">
+      <a class="px-2 py-4 bg-white rounded-lg self-start">Google LLC</a>
+      <h2 class="font-medium text-2xl">Integrate OpenAI API</h2>
+      <div>
+       <p class="p-4 text-[#000]/50 bg-white rounded-lg">
+        Debug using Chrome DevTools, check for overlapping elements...
+       </p>
+      </div>
+      
+      <div class="flex justify-between items-center border-t border-dashed border-text/10 pt-2">
+       <div class="flex flex-col">
+        <p class="text-sm text-text/70">Deadline</p>
+        <p class="font-medium text-text">21 March 2025</p>
+       </div>
+       <button class="completeBtn text-white bg-accent px-5 py-3 font-medium rounded-lg">
+        Completed
+       </button>
+      </div>
+     </div>
+     <!-- task card -->
+     <div class="task-card p-6 rounded-2xl bg-background flex flex-col gap-4">
+      <a class="px-2 py-4 bg-white rounded-lg self-start">Glassdoor</a>
+      <h2 class="font-medium text-2xl">Improve Job searching</h2>
+      <div>
+       <p class="p-4 text-[#000]/50 bg-white rounded-lg">
+        Debug using Chrome DevTools, check for overlapping elements...
+       </p>
+      </div>
+      
+      <div class="flex justify-between items-center border-t border-dashed border-text/10 pt-2">
+       <div class="flex flex-col">
+        <p class="text-sm text-text/70">Deadline</p>
+        <p class="font-medium text-text">21 March 2025</p>
+       </div>
+       <button class="button text-white bg-accent px-5 py-3 font-medium rounded-lg">
+        Completed
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   
+   <!-- activity log -->
+   <div class="col-span-1 bg-white rounded-2xl p-4 divide-y-2 divide-dashed divide-background">
+    <div class="flex flex-col items-center justify-center gap-6 pb-4">
+     <div class="flex gap-4 items-center">
+      <div>
+       <img src="./assets/activity.png" alt="" />
+      </div>
+      <span class="font-medium text-xl text-text">Activity Log</span>
+     </div>
+     <button class="button text-white bg-accent px-5 py-3 font-medium rounded-lg">
+      Clear History
+     </button>
+    </div>
+    <div class="log space-y-6">
+     <p class="text-text/70 p-4 bg-background rounded-lg">
+      You have Complete The Task Add Dark Mode at 12:48:15 PM
+     </p>
+     <p class="text-text/70 p-4 bg-background rounded-lg">
+      You have Complete The Task Add Dark Mode at 12:48:15 PM
+     </p>
+    </div>
+   </div>
+  </section>
+ </main>
+ 
+ <script src="./scripts/main.js"></script>
+</body>
 
-        <!--task total && random theme -->
-        <div class="flex items-center gap-6">
-          <div
-            class="flex items-baseline gap-3 bg-background py-3 px-6 rounded-full"
-          >
-            <!-- <input type="checkbox" checked="checked" class="checkbox checkbox-lg checkbox-primary" /> -->
-            <input
-              type="checkbox"
-              checked="checked"
-              class="checkbox checkbox-lg checked:bg-accent checked:text-white checked:border-accent"
-            />
-            <span id="" class="font-bold text-3xl">23</span>
-          </div>
-          <img
-            src="./assets/theme-btn.png"
-            id="theme-btn"
-            class="p-3 bg-background rounded-full"
-          />
-        </div>
-      </nav>
-    </header>
-
-    <main class="container mx-auto">
-      <section class="grid grid-cols-4 gap-4">
-        <!-- top bar/ progress bar -->
-        <div
-          class="col-span-3 bg-white rounded-2xl p-4 space-y-8 divide-y-2 divide-[#3752FD]/20 divide-dashed divide-background"
-        >
-          <div class="grid grid-cols-4 gap-4 pb-6">
-            <!--task assigned  -->
-            <div class="bg-background flex gap-4 p-8 col-span-1 rounded-xl">
-              <div class="p-4 rounded-full bg-white">
-                <input
-                  type="checkbox"
-                  checked="checked"
-                  class="checkbox checkbox-lg checked:bg-accent checked:text-white checked:border-accent"
-                />
-              </div>
-              <div class="flex flex-col">
-                <p class="font-medium text-text text-opacity-80">
-                  Task Assinged
-                </p>
-                <span id="" class="font-bold text-3xl">06</span>
-              </div>
-            </div>
-            <!-- discover -->
-            <div
-              class="flex gap-6 items-center bg-gradient-to-r from-[#3752FD] via-[#6C7FFA] to-[#9BA8F8] p-6 rounded-2xl col-span-2"
-            >
-              <img src="./assets/board.png" alt="calender " />
-              <p class="font-medium text-2xl text-white">
-                Discover Something <br />
-                New Today!
-              </p>
-            </div>
-            <!-- date -->
-            <div class="bg-background flex gap-4 p-8 col-span-1 rounded-xl">
-              <div class="p-4 rounded-full bg-white">
-                <img src="./assets/calender.png" alt="" />
-              </div>
-              <div class="flex flex-col">
-                <p class="font-medium text-text text-opacity-80">
-                  Wed ,<br /><span id="" class="font-bold text-xl"
-                    >Jul 28 2025</span
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- task container -->
-          <div class="grid grid-cols-3 gap-8">
-            <!-- task card -->
-            <div
-              class="task-card p-6 rounded-2xl bg-background flex flex-col gap-4"
-            >
-              <a class="px-2 py-4 bg-white rounded-lg self-start">ShopEase</a>
-              <h2 class="font-medium text-2xl">Fix Mobile Button Issue</h2>
-              <div>
-                <p class="p-4 pb-6 text-[#000]/50 bg-white rounded-lg">
-                  Debug using Chrome DevTools, check for overlapping elements...
-                </p>
-              </div>
-
-              <div
-                class="flex justify-between items-center border-t border-dashed border-text/10 pt-2"
-              >
-                <div class="flex flex-col">
-                  <p class="text-sm text-text/70">Deadline</p>
-                  <p class="font-medium text-text">21 March 2025</p>
-                </div>
-                <button
-                  class="button text-white bg-accent px-5 py-3 font-medium rounded-lg"
-                >
-                  Completed
-                </button>
-              </div>
-            </div>
-            <!-- task card -->
-            <div
-              class="task-card p-6 rounded-2xl bg-background flex flex-col gap-4"
-            >
-              <a class="px-2 py-4 bg-white rounded-lg self-start">CloudSync</a>
-              <h2 class="font-medium text-2xl">Add Dark Mode</h2>
-              <div>
-                <p class="p-4 text-[#000]/50 bg-white rounded-lg">
-                  Debug using Chrome DevTools, check for overlapping elements...
-                </p>
-              </div>
-
-              <div
-                class="flex justify-between items-center border-t border-dashed border-text/10 pt-2"
-              >
-                <div class="flex flex-col">
-                  <p class="text-sm text-text/70">Deadline</p>
-                  <p class="font-medium text-text">21 March 2025</p>
-                </div>
-                <button
-                  class="button text-white bg-accent px-5 py-3 font-medium rounded-lg"
-                >
-                  Completed
-                </button>
-              </div>
-            </div>
-            <!-- task card -->
-            <div
-              class="task-card p-6 rounded-2xl bg-background flex flex-col gap-4"
-            >
-              <a class="px-2 py-4 bg-white rounded-lg self-start">SwiftPay</a>
-              <h2 class="font-medium text-2xl">Optimize Home Page</h2>
-              <div>
-                <p class="p-4 text-[#000]/50 bg-white rounded-lg">
-                  Debug using Chrome DevTools, check for overlapping elements...
-                </p>
-              </div>
-
-              <div
-                class="flex justify-between items-center border-t border-dashed border-text/10 pt-2"
-              >
-                <div class="flex flex-col">
-                  <p class="text-sm text-text/70">Deadline</p>
-                  <p class="font-medium text-text">21 March 2025</p>
-                </div>
-                <button
-                  class="button text-white bg-accent px-5 py-3 font-medium rounded-lg"
-                >
-                  Completed
-                </button>
-              </div>
-            </div>
-            <!-- task card -->
-            <div
-              class="task-card p-6 rounded-2xl bg-background flex flex-col gap-4"
-            >
-              <a class="px-2 py-4 bg-white rounded-lg self-start">Meta</a>
-              <h2 class="font-medium text-2xl">Add new emoji🤲</h2>
-              <div>
-                <p class="p-4 text-[#000]/50 bg-white rounded-lg">
-                  Debug using Chrome DevTools, check for overlapping elements...
-                </p>
-              </div>
-
-              <div
-                class="flex justify-between items-center border-t border-dashed border-text/10 pt-2"
-              >
-                <div class="flex flex-col">
-                  <p class="text-sm text-text/70">Deadline</p>
-                  <p class="font-medium text-text">21 March 2025</p>
-                </div>
-                <button
-                  class="button text-white bg-accent px-5 py-3 font-medium rounded-lg"
-                >
-                  Completed
-                </button>
-              </div>
-            </div>
-            <!-- task card -->
-            <div
-              class="task-card p-6 rounded-2xl bg-background flex flex-col gap-4"
-            >
-              <a class="px-2 py-4 bg-white rounded-lg self-start">Google LLC</a>
-              <h2 class="font-medium text-2xl">Integrate OpenAI API</h2>
-              <div>
-                <p class="p-4 text-[#000]/50 bg-white rounded-lg">
-                  Debug using Chrome DevTools, check for overlapping elements...
-                </p>
-              </div>
-
-              <div
-                class="flex justify-between items-center border-t border-dashed border-text/10 pt-2"
-              >
-                <div class="flex flex-col">
-                  <p class="text-sm text-text/70">Deadline</p>
-                  <p class="font-medium text-text">21 March 2025</p>
-                </div>
-                <button
-                  class="button text-white bg-accent px-5 py-3 font-medium rounded-lg"
-                >
-                  Completed
-                </button>
-              </div>
-            </div>
-            <!-- task card -->
-            <div
-              class="task-card p-6 rounded-2xl bg-background flex flex-col gap-4"
-            >
-              <a class="px-2 py-4 bg-white rounded-lg self-start">Glassdoor</a>
-              <h2 class="font-medium text-2xl">Improve Job searching</h2>
-              <div>
-                <p class="p-4 text-[#000]/50 bg-white rounded-lg">
-                  Debug using Chrome DevTools, check for overlapping elements...
-                </p>
-              </div>
-
-              <div
-                class="flex justify-between items-center border-t border-dashed border-text/10 pt-2"
-              >
-                <div class="flex flex-col">
-                  <p class="text-sm text-text/70">Deadline</p>
-                  <p class="font-medium text-text">21 March 2025</p>
-                </div>
-                <button
-                  class="button text-white bg-accent px-5 py-3 font-medium rounded-lg"
-                >
-                  Completed
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- activity log -->
-        <div
-          class="col-span-1 bg-white rounded-2xl p-4 divide-y-2 divide-dashed divide-background"
-        >
-          <div class="flex flex-col items-center justify-center gap-6 pb-4">
-            <div class="flex gap-4 items-center">
-              <div>
-                <img src="./assets/activity.png" alt="" />
-              </div>
-              <span class="font-medium text-xl text-text">Activity Log</span>
-            </div>
-            <button
-              class="button text-white bg-accent px-5 py-3 font-medium rounded-lg"
-            >
-              Clear History
-            </button>
-          </div>
-          <div class="log space-y-6">
-            <p class="text-text/70 p-4 bg-background rounded-lg">
-              You have Complete The Task Add Dark Mode at 12:48:15 PM
-            </p>
-            <p class="text-text/70 p-4 bg-background rounded-lg">
-              You have Complete The Task Add Dark Mode at 12:48:15 PM
-            </p>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <script src="./scripts/main.js"></script>
-  </body>
 </html>
