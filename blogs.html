@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DevBoard</title>
 
-    <!-- daisyUI & tailwindcss -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.9/daisyui.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-    <!-- custom style -->
-    <style type="text/tailwindcss">
-      @theme {
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>DevBoard</title>
+ 
+ <!-- daisyUI & tailwindcss -->
+ <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.9/daisyui.css" rel="stylesheet" type="text/css" />
+ <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+ 
+ <!-- custom style -->
+ <style type="text/tailwindcss">
+  @theme {
         --color-clifford: #da373d;
         --color-accent: #f4f7ff;
         --color-text: #00303c;
@@ -24,99 +21,80 @@
         --color-background: #f4f7ff;
       }
     </style>
-    <link rel="stylesheet" href="./styles/style.css" />
-  </head>
+ <link rel="stylesheet" href="./styles/style.css" />
+</head>
 
-  <body class="ff-poppins bg-background min-h-screen space-y-6">
-    <header class="container mx-auto">
-      <nav class="flex items-center justify-between p-6 rounded-2xl bg-white">
-        <!--  logo   -->
-        <div class="flex items-end gap-2">
-          <img src="./assets/logo.png" alt="dev board logo" />
-          <p class="text-4xl font-light">
-            Dev<span class="font-bold">Board</span>
-          </p>
-        </div>
+<body class="ff-poppins bg-background min-h-screen space-y-6">
+ <header class="container mx-auto">
+  <nav class="flex items-center justify-between p-6 rounded-2xl bg-white">
+   <!--  logo   -->
+   <div class="flex items-end gap-2">
+    <img src="./assets/logo.png" alt="dev board logo" />
+    <p class="text-4xl font-light">
+     Dev<span class="font-bold">Board</span>
+    </p>
+   </div>
+   
+   <div>
+    <button id="backtodesk" class="cursor-pointer text-white bg-accent px-5 py-3 font-medium rounded-lg">
+     Back to Desk
+    </button>
+   </div>
+  </nav>
+ </header>
+ <main class="container mx-auto space-y-6">
+  <h1 class="text-text font-bold text-3xl text-center">Blogs</h1>
+  
+  <div class="rounded-lg divide-y-2 divide-dashed divide-accent/20 bg-white">
+   <p class="p-4 text-text font-bold">
+    Question-1: What are the different ways to select an element in the
+    DOM?
+   </p>
+   <p class="p-4 text-text/70">
+    We can select element or elements of DOM by id, class, tag name etc.
+   </p>
+  </div>
+  <div class="rounded-lg divide-y-2 divide-dashed divide-accent/20 bg-white">
+   <p class="p-4 text-text font-bold">
+    Question-2: What is the difference between innerHTML, innerText, and
+    textContent ?
+   </p>
+   <p class="p-4 text-text/70">
+    innerHTML contains the tag also. innerText shows text content except hidden.textContent shows all text including hidden.
+   </p>
+  </div>
+  
+  <div class="rounded-lg divide-y-2 divide-dashed divide-accent/20 bg-white">
+   <p class="p-4 text-text font-bold">
+    Question-3: What is event delegation in the DOM?
+   </p>
+   <p class="p-4 text-text/70">We apply the event listener to the parent, and when an event happens on any child element, we can detect it
+   </p>
+  </div>
+  <div class="rounded-lg divide-y-2 divide-dashed divide-accent/20 bg-white">
+   <p class="p-4 text-text font-bold">
+    Question-4: What is event bubbling in the DOM?
+   </p>
+   <p class="p-4 text-text/70">When you click on an element, the event also affects its parent, then its grandparent, and continues up to the <html> element. This is called event bubbling.
+    
+    
+   </p>
+  </div>
+  <div class="rounded-lg divide-y-2 divide-dashed divide-accent/20 bg-white">
+   <p class="p-4 text-text font-bold">
+    Question-5: How do you create, add, and remove elements using
+    JavaScript?
+   </p>
+   <p class="p-4 text-text/70">
+    To create an element, document.createElement("tag").
+    To add it, parent.appendChild(element) or parent.append(element).
+    To remove it, element.remove().
+    
+   </p>
+  </div>
+ </main>
+ <footer></footer>
+ <script src="./scripts/blogs.js"></script>
+</body>
 
-        <div>
-          <button
-            id="backtodesk"
-            class="cursor-pointer text-white bg-accent px-5 py-3 font-medium rounded-lg"
-          >
-            Back to Desk
-          </button>
-        </div>
-      </nav>
-    </header>
-    <main class="container mx-auto space-y-6">
-      <h1 class="text-text font-bold text-3xl text-center">Blogs</h1>
-
-      <div
-        class="rounded-lg divide-y-2 divide-dashed divide-accent/20 bg-white"
-      >
-        <p class="p-4 text-text font-bold">
-          Question-1: What are the different ways to select an element in the
-          DOM?
-        </p>
-        <p class="p-4 text-text/70">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dolore
-          earum iusto consequatur nesciunt tenetur harum perferendis commodi
-          alias provident!
-        </p>
-      </div>
-      <div
-        class="rounded-lg divide-y-2 divide-dashed divide-accent/20 bg-white"
-      >
-        <p class="p-4 text-text font-bold">
-          Question-2: What is the difference between innerHTML, innerText, and
-          textContent ?
-        </p>
-        <p class="p-4 text-text/70">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dolore
-          earum iusto consequatur nesciunt tenetur harum perferendis commodi
-          alias provident!
-        </p>
-      </div>
-
-      <div
-        class="rounded-lg divide-y-2 divide-dashed divide-accent/20 bg-white"
-      >
-        <p class="p-4 text-text font-bold">
-          Question-3: What is event delegation in the DOM?
-        </p>
-        <p class="p-4 text-text/70">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dolore
-          earum iusto consequatur nesciunt tenetur harum perferendis commodi
-          alias provident!
-        </p>
-      </div>
-      <div
-        class="rounded-lg divide-y-2 divide-dashed divide-accent/20 bg-white"
-      >
-        <p class="p-4 text-text font-bold">
-          Question-4: What is event bubbling in the DOM?
-        </p>
-        <p class="p-4 text-text/70">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dolore
-          earum iusto consequatur nesciunt tenetur harum perferendis commodi
-          alias provident!
-        </p>
-      </div>
-      <div
-        class="rounded-lg divide-y-2 divide-dashed divide-accent/20 bg-white"
-      >
-        <p class="p-4 text-text font-bold">
-          Question-5: How do you create, add, and remove elements using
-          JavaScript?
-        </p>
-        <p class="p-4 text-text/70">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dolore
-          earum iusto consequatur nesciunt tenetur harum perferendis commodi
-          alias provident!
-        </p>
-      </div>
-    </main>
-    <footer></footer>
-    <script src="./scripts/blogs.js"></script>
-  </body>
 </html>
